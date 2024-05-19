@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/about.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/project.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/footer.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/skill.css">
+	<!-- <link rel="stylesheet" type="text/css" href="/static/css/contact.css"> -->
+
+	<title></title>
+	<style >
+
+	</style>
+</head>
+<body>
+<div class="container">
+	<nav>
+		<div class="logo">Aashish kumar</div>
+		<ul class="navitems">
+			<!---request.path gives a current page path-->
+			<li class="{% if request.path == '/' %} active {% endif %}"><a href="{% url 'home' %}">Home</a></li>
+			<li  class="{% if request.path == '/about-me/' %} active {% endif %}"><a href="{% url 'about_me' %}">About</a></li>
+
+			<!---  or -->
+			{% url 'skill' as skill_url %}
+			<li class="{% if request.path == skill_url %} active {% endif %}"><a href="{{skill_url}}">Skill</a></li>
+			<li class="{% if request.path == '/project/' %} active {% endif %}"><a href="{% url 'project' %}">Project</a></li>
+
+            <li class="{% if request.path == '/contact/' %} active {% endif %}"><a href="{% url 'contact' %}">contact</a></li>
+		</ul>
+
+		<div class="links">
+			<a href="https://www.linkedin.com/in/aashish-kumar-1a20a2278/" target="_blank" class="fa fa-linkedin-square"></a>
+			<a href="https://www.youtube.com/channel/UCdwihC15_IjTPcyujhhbKDw" target="_blank" class="fa fa-youtube"></a>
+			<a href="https://www.instagram.com/hiaashish_83/" class="fa fa-instagram" target="_blank"></a>
+		</div>
+	</nav>

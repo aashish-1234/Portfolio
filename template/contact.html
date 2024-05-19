@@ -1,0 +1,42 @@
+{% include "header.html" %}
+<link rel="stylesheet" type="text/css" href="/static/css/contact.css">
+<div class="contact_container">
+	<div class="inner_section">
+		<div id="left">
+			<h1 id="we">We've been</h1>
+			<h1 id="for">waiting for you</h1>
+		</div>
+		<h4> Fill in the form or <u> Send us an email </u></h4>
+		<div class="help">
+			<div><img src="/static/image/email.png"><h>hiaashish83@gmail.com</h></div>
+			<div><img src="/static/image/phone.png"><h>+91 9508838609</h></div>
+			<div><img src="/static/image/location.png"><h>patna 800001,Bihar </h></div>
+		</div>
+	</div>
+	<div class="inner_section">
+		<div class="right"><h2>Send us a Message</h2>
+		<form method="POST" action="{% url 'saveenquiry' %}">
+			{% csrf_token %}
+			<table>
+				<tr>
+					<td><input type="text" name="name" size="50" placeholder="Name"></td>
+				</tr>
+				<tr>
+					<td><input type="email" name="email" size="50" placeholder="Email"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="subject" size="50" placeholder="subject"></td>
+				</tr>
+				<tr>
+					<td><textarea rows="6" cols="53" name="message" placeholder="Describe yourself here..."> </textarea></td>
+				</tr>
+				<tr>
+					<td><button id="button" type="submit" >Send Message</button></td>
+				</tr>
+			</table>
+		</form>
+		</div>
+
+	</div>
+</div>
+{% include "footer.html" %} 
