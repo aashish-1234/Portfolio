@@ -98,12 +98,14 @@ def saveEnquiry(request):
         en.save()
 
         send_mail(
-            "Receiving your email{email}",
+            "Receiving your email",
             "thank you for contacting me i will be response soon",
             'hiaashish83@gmail.com',
             [email],
             fail_silently=False,
         )
-         
-    return render(request,"contact.html")
+        data={
+            'output':"success_mail"
+        }
+    return render(request,"contact.html",data)
 
